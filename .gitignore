@@ -1,0 +1,49 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+# Ignore Visual Studio Code and Visual Studio directories
+.vscode/
+.vs/
+
+# Ignore SQLite database file
+*.db
+
+# Ignore NuGet packages, binaries, and build artifacts
+*.nupkg
+*.pdb
+*.dll
+bin/
+obj/
+
+# Ignore user-specific files and logs
+*.user
+*.suo
+*.log
+*.tmp
+*.pid
+
+# Ignore Rider and ReSharper directories
+.idea/
+
+# Ignore Mono-generated files
+mono_crash.*
+
+# Ignore Windows-specific files and directories
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+Desktop.ini
+*.lnk
+
+# Ignore JetBrains Rider specific files
+*.sln.iml
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore generated project files
+*.userprefs
+*.sln.docstates
