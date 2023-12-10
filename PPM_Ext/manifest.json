@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "PPassword Generator",
+  "description": "Create secure passwords.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "assets/icon_16.png",
+    "48": "assets/icon_48.png",
+    "128": "assets/icon_128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "cookies",
+    "declarativeContent",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "author": "PaulR",
+  "content_scripts":[
+    {
+    "matches": ["<all_urls>"],
+    "js": ["contentScript.js","popup.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+   "default_popup": "popup.html",
+    "default_title": "PPassword Manager",
+    "default_icon": "assets/icon_main.png"
+  }
+}
