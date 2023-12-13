@@ -5,35 +5,37 @@ riderModule.iml
 /_ReSharper.Caches/
 
 # Ignore Visual Studio Code and Visual Studio directories
-.vscode/
-.vs/
+**/.vscode/
+**/.vs/
 
 # Ignore SQLite database file
-*.db
+**/*.db
+**/*.sqlite
+identifier.sqlite
 
 # Ignore NuGet packages, binaries, and build artifacts
-*.nupkg
-*.pdb
-*.dll
-bin/
-obj/
+**/*.nupkg
+**/*.pdb
+**/*.dll
+**/bin/
+**/obj/
 
 # Ignore user-specific files and logs
-*.user
-*.suo
-*.log
-*.tmp
-*.pid
+**/*.user
+**/*.suo
+**/*.log
+**/*.tmp
+**/*.pid
 
 # Ignore Rider and ReSharper directories
-.idea/
+**/.idea/
 
 # Ignore Mono-generated files
 mono_crash.*
 
 # Ignore Windows-specific files and directories
-Thumbs.db
-ehthumbs.db
+**/*Thumbs.db
+**/*ehthumbs.db
 $RECYCLE.BIN/
 Desktop.ini
 *.lnk
@@ -42,7 +44,7 @@ Desktop.ini
 *.sln.iml
 
 # Ignore macOS specific files
-.DS_Store
+**/*.DS_Store
 
 # Ignore generated project files
 *.userprefs
@@ -52,14 +54,15 @@ Desktop.ini
 /shelf/
 /workspace.xml
 # Rider ignored files
-*.idea/
-/.idea.PPassword Manager.iml
-/projectSettingsUpdater.xml
-/contentModel.xml
-/modules.xml
+**/*.idea/
+.idea/
+**/.idea.PPassword Manager.iml
+**/projectSettingsUpdater.xml
+**/contentModel.xml
+**/modules.xml
 # Editor-based HTTP Client requests
-/httpRequests/
+**/httpRequests/
 # Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+**/dataSources/
+**/dataSources.local.xml
 
