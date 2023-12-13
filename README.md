@@ -30,3 +30,8 @@ The extension provided will automatically guess the site's name for you everytim
 - Blazor
 - .NET Identity Framework
 - K6 (For load testing)
+***
+<details>
+  <summary>📣 Note!!</summary>
+  <p>This is not the final release and will be updated in the future.</p>
+</details>
