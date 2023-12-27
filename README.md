@@ -7,6 +7,12 @@ PPassword manager is a new solution designed to change the way you think about y
 Everytime you request a password for any website, the PPassword manager **chrome extension** takes the website's title and your master key and generates a secure password for you. For every website-masterkey pair, it would generate the same password over and over again. So instead of storing your passwords directly in some database, it takes a more secure approach by regenarating your passwords based on some parameters, the parameters begin your site's title/url and your master password.
 The extension provided will automatically guess the site's name for you everytime you visit some website, however you can modify that input as you wish in case the extension gets that name wrong.
 ## Architecture
+***
+<details>
+  <summary>📣 Note!!</summary>
+  <p>This is not the final release and will be updated in the future.</p>
+</details>
+
 ### Core functionality
 ![1](public/core.png)
 > In case you are not satisfied with a minimal extension and want a full-fledged password manager that remembers your generation history as well, you can use the **Blazor Webassembly** client. You would need to register yourself and for every password that you create, the backend api would store the website's url/title in the database. It would be provided to you at login so you can view your websites and regenerate the password.
@@ -31,7 +37,12 @@ The extension provided will automatically guess the site's name for you everytim
 - .NET Identity Framework
 - K6 (For load testing)
 ***
-<details>
-  <summary>📣 Note!!</summary>
-  <p>This is not the final release and will be updated in the future.</p>
-</details>
+## API Endpoints
+### Generate new password (No-auth)
+- Endpoint: ``
+- Method: **POST**
+- Description: 
+- Example request:
+```bash
+curl -X POST https://
+```

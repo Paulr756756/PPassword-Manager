@@ -10,8 +10,8 @@ var app = builder.Build();
 
 DependencyExtensions.UseBuilderMethods(app);
 
-AppEndpoints.GetEndpoints(app);
-AppEndpoints.PostEndpoints(app);
-AppEndpoints.DeleteEndpoints(app);
+AppEndpoints.GETEndpoints(app);
+AppEndpoints.POSTEndpoints(app);
+AppEndpoints.DELETEEndpoints(app);
 
 app.Run();

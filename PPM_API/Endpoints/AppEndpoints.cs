@@ -13,7 +13,7 @@ public static class AppEndpoints
     ///     GET endpoints
     /// </summary>
     /// <param name="app">The Web Application</param>
-    public static void GetEndpoints(WebApplication app)
+    public static void GETEndpoints(WebApplication app)
     {
         app.MapGet("/saved-sites", async (HttpContext ctx) =>
         {
@@ -38,7 +38,7 @@ public static class AppEndpoints
     ///     For handling POST requests
     /// </summary>
     /// <param name="app">The Web Application</param>
-    public static void PostEndpoints(WebApplication app)
+    public static void POSTEndpoints(WebApplication app)
     {
         app.MapPost("/gen-pwd", (HttpContext ctx, [FromBody] ApiRequest request) =>
         {
@@ -93,7 +93,7 @@ public static class AppEndpoints
     ///     For handling DELETE requests
     /// </summary>
     /// <param name="app">The Web Application</param>
-    public static void DeleteEndpoints(WebApplication app)
+    public static void DELETEEndpoints(WebApplication app)
     {
         app.MapDelete("/auth/delete-site", async (HttpContext ctx, [FromBody] ApiRequest request) =>
         {

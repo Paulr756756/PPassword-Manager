@@ -18,6 +18,18 @@ public static class DependencyExtensions
     public static void RegisterDependencies(WebApplicationBuilder builder)
     {
         var services = builder.Services;
+        var configuration = builder.Configuration;
+        
+        services.AddCors(co => 
+        {
+            co.AddPolicy("myPolicy", pb => {
+                pb.WithOrigins(configuration["AllowedOrigins"]!)
+                    .WithMethods(["POST", "GET", "DELETE", "PUT"])
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+            });
+        });
+
         services.AddDbContext<AppDbContext>(x =>
             x.UseSqlite("DataSource=app.db"));
         services.AddIdentityCore<User>()
@@ -36,6 +48,8 @@ public static class DependencyExtensions
     /// <param name="app">The web application</param>
     public static void UseBuilderMethods(WebApplication app)
     {
+        app.UseCors("myPolicy");
+
         app.MapIdentityApi<User>();
     }
 }
