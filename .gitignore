@@ -66,3 +66,5 @@ Desktop.ini
 **/dataSources/
 **/dataSources.local.xml
 
+# Node modules
+/ppm_client/node_modules/
