@@ -1,11 +1,10 @@
 <script setup>
-import Card from './components/Card.vue';
-import Home from './components/Home.vue';
-import Hero from './components/Hero.vue';
+
 </script>
 
 <template>
-  <Hero/>
+  <!-- TODO(Add a navbar, brand, login/logout, github docs) --> 
+  <router-view></router-view>
 </template>
 
 <style scoped>

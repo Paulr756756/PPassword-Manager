@@ -1,13 +1,19 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { baseUrl } from '../constants';
+
 //BUG(username not a requirement)
+/**
+ * Represents the user's register model
+ * @type {RegisterRequest}
+ */
 const model = {
     email: "",
-    username: "",
+    userName: "",
     password: "",
-    confirmPassword: "",
 }
+
+const confirmPassword = ""
 
 const isLoading = ref(false)
 const formRef = ref("form1")
@@ -15,22 +21,15 @@ const modalRef = ref("dialog2")
 const status = ref("Not Registered")
 
 const validateInputs = () => {
-    if (model.password != model.confirmPassword) {
-        
+    if (model.password != confirmPassword) {
+        //TODO(Do something else)
+        throw new Error('Passwords do not match!')
     }
 }
 
 const formSubmit = async () => {
     validateInputs()
-
-    const requestBody = {
-        userName: model.username,
-        email: model.email,
-        password: model.password
-    }  
-
     isLoading.value = true
-    
     if (modalRef.value) modalRef.value.showModal()
     try {
         const response = await fetch(`${baseUrl}register`, {
@@ -38,10 +37,11 @@ const formSubmit = async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(requestBody)
+            body: JSON.stringify(model)
         })
         console.log(response)
         if (!response.ok) throw new Error(`HTTP ERROR! Status ${response.status}`)
+        
         else status.value = "Registered Successfully ✅"
         isLoading.value = false
     } catch (error) {
@@ -51,10 +51,9 @@ const formSubmit = async () => {
     }
 }
 
-const isFormInvalid = computed(() => {
-/* FIXME(Make submit button invalid)
-    return formRef.value.checkValidity() */
+/* const isFormInvalid = computed(() => {
 })
+ */
 
 </script>
 
@@ -68,7 +67,7 @@ const isFormInvalid = computed(() => {
                     <h1 class="mb-5 text-5xl font-bold">Account Registration</h1>
                     <!-- <p class="mb-5"></p> -->
                     <form ref="formRef"
-                    v-on:submit.prevent="formSubmit()">
+                    @submit.prevent="formSubmit()">
 
                         <div class="form-control">
                             <label class="label">
@@ -85,7 +84,7 @@ const isFormInvalid = computed(() => {
                             <label class="label">
                                 <span class="label-text">username</span>
                             </label>
-                            <input v-model="model.username"
+                            <input v-model="model.userName"
                             type="text" 
                             placeholder="Username" 
                             class="input input-bordered" 
@@ -109,7 +108,7 @@ const isFormInvalid = computed(() => {
                             <label class="label">
                                 <span class="label-text">Confirm Password</span>
                             </label>
-                            <input v-model="model.confirmPassword"
+                            <input v-model="confirmPassword"
                             type="password" 
                             placeholder="password" 
                             class="input input-bordered" 

@@ -1,63 +1,46 @@
 <script setup>
-import { ref } from 'vue';
-import { baseUrl } from '../constants';
 import { useRouter } from 'vue-router'
+import useAuth from '../auth';
+import { ref } from 'vue';
 
+/**
+ * Represents the user's login model
+ * @type {LoginRequest}
+ */
 const model = {
     email: "",
     password: ""
 }
 
-const bearerToken = {
-    accessToken: "",
-    refreshToken: "",
-    expiresIn: 0,
-}
 const router = useRouter()
 const status = ref("")
 const isLoggedIn = ref(false)
 const modalRef = ref("dialog3")
+
 const validateInputs = () => {
 
 }
 
 const formSubmit = async () => {
     validateInputs()
-    const requestBody = {
-        email: model.email,
-        password: model.password
-    }
-
     try {
-        const response = await fetch(`${baseUrl}login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
-        })
-        console.log(response)
-        if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`)
-
-        const responseData = await response.json()
-        console.log(responseData)
-        bearerToken.accessToken = responseData.accessToken;
-        bearerToken.refreshToken = responseData.refreshToken;
-        bearerToken.expiresIn = responseData.expiresIn;
+        const { login } = useAuth()
+        console.log(login)
+        await login(model)
 
         status.value = "Logged in successfully 😎. Redirecting ..."
         isLoggedIn.value = true
         modalRef.value.showModal()
 
-        await new Promise(resolve => setTimeout(resolve, 2000))
-        router.push('/user')
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        router.push({ name: 'userhome' })
     } catch (error) {
         console.error(error)
         status.value = "Couldn't Log in 😞"
         modalRef.value.showModal()
     }
-
 }
+
 </script>
 
 <template>
@@ -70,7 +53,7 @@ const formSubmit = async () => {
                     <h1 class="mb-5 text-5xl font-bold">Login</h1>
                     <!-- <p class="mb-5"></p> -->
                     <form ref="formRef"
-                    v-on:submit.prevent="formSubmit()">
+                    @submit.prevent="formSubmit()">
 
                         <div class="form-control">
                             <label class="label">

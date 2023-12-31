@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+import { baseUrl } from './constants'
 
 const isAuthenticated = ref(false)
 
@@ -29,7 +30,7 @@ export default function useAuth() {
         localStorage.clear()
         localStorage.setItem('accessToken', responseData.accessToken)
         localStorage.setItem('refreshToken', responseData.refreshToken)
-        localStorage.setItem('expiresIn', responseData.expiresIn)
+        localStorage.setItem('expireDate', (parseInt(responseData.expiresIn)*1000) + Date.now())
 
         isAuthenticated.value = true
     }
@@ -42,31 +43,31 @@ export default function useAuth() {
         localStorage.clear()
     }
 
-    /** 
-     * Gets a new access token from the API after previous has expired.
-    */
+    // Gets a new access token from the API after previous has expired.
     const refreshLogin = async ()  => {
         const refreshToken = localStorage.getItem('refreshToken')
-        const response = await fetch(`${baseUrl}login`, {
+        const response = await fetch(`${baseUrl}refresh`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 'refreshToken': refreshToken })
         })
+        console.log(JSON.stringify({ 'refreshToken': refreshToken }),response)
         if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`)
         
         const responseData = await response.json()
         localStorage.clear()
         localStorage.setItem('accessToken', responseData.accessToken)
         localStorage.setItem('refreshToken', responseData.refreshToken)
-        localStorage.setItem('expiresIn', responseData.expiresIn)
+        localStorage.setItem('expireDate', (parseInt(responseData.expiresIn)*1000) + Date.now())
         
         isAuthenticated.value = true
     }
 
     return {
         isAuthenticated,
+        refreshLogin,
         login,
         logout
     }

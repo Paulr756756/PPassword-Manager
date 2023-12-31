@@ -82,8 +82,9 @@ const copyPassword = async () => {
                         class="input input-bordered" 
                         required/>
                         <label class="label">
-                            <router-link to="/Login" class="label-text-alt link link-hover">Have an account? Log in</router-link>
-                            <router-link to="/Register" class="label-text-alt link link-hover">Register</router-link>
+                            <router-link :to="{name: 'login'}" class="label-text-alt link link-hover">Have an account? Log in</router-link>
+                            <router-link :to="{name: 'register', params: {}}" 
+                            class="label-text-alt link link-hover">Register</router-link>
                         </label>
                     </div>
                     <div class="form-control mt-6">
