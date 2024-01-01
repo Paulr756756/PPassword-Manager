@@ -23,11 +23,15 @@ public static class DependencyExtensions
         services.AddCors(co => 
         {
             co.AddPolicy("myPolicy", pb => {
-                pb.WithOrigins(configuration["AllowedOrigins"]!)
-                    .WithMethods(["POST", "GET", "DELETE", "PUT"])
-                    .AllowAnyHeader()
-                    .AllowCredentials();
+                 pb.WithOrigins(configuration["AllowedOrigins"]!)
+                     .WithMethods("POST", "GET", "PUT", "DELETE")
+                     .AllowAnyHeader()
+                     .AllowCredentials();
+                 
+                /* TODO(Doesn't work. Figure out why??)
+                pb.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();*/
             });
+                
         });
 
         services.AddDbContext<AppDbContext>(x =>

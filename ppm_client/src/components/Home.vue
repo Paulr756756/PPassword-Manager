@@ -10,8 +10,6 @@ const model = {
 const modalRef = ref("dialog1")
 const isLoading = ref(true)
 const formSubmit = async () => {
-    console.log("Called")
-
     isLoading.value = true
     if (modalRef.value) modalRef.value.showModal()
     try {

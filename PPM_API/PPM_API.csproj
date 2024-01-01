@@ -12,48 +12,6 @@
         <Content Include="..\.dockerignore">
             <Link>.dockerignore</Link>
         </Content>
-        <Content Include="..\PPM_APITests\load_test.js">
-          <Link>PPM_APITests\load_test.js</Link>
-        </Content>
-        <Content Include="..\PPM_APITests\sample_test.js">
-          <Link>PPM_APITests\sample_test.js</Link>
-        </Content>
-        <Content Include="..\PPM_APITests\spike_test.js">
-          <Link>PPM_APITests\spike_test.js</Link>
-        </Content>
-        <Content Include="..\PPM_APITests\stress_test.js">
-          <Link>PPM_APITests\stress_test.js</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\assets\icon_128.png">
-          <Link>PPM_Ext\assets\icon_128.png</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\assets\icon_16.png">
-          <Link>PPM_Ext\assets\icon_16.png</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\assets\icon_48.png">
-          <Link>PPM_Ext\assets\icon_48.png</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\assets\icon_main.png">
-          <Link>PPM_Ext\assets\icon_main.png</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\background.js">
-          <Link>PPM_Ext\background.js</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\contentScript.js">
-          <Link>PPM_Ext\contentScript.js</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\manifest.json">
-          <Link>PPM_Ext\manifest.json</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\popup.css">
-          <Link>PPM_Ext\popup.css</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\popup.html">
-          <Link>PPM_Ext\popup.html</Link>
-        </Content>
-        <Content Include="..\PPM_Ext\popup.js">
-          <Link>PPM_Ext\popup.js</Link>
-        </Content>
         <Content Include="..\README.md">
           <Link>README.md</Link>
         </Content>
