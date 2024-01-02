@@ -8,7 +8,7 @@ const model = {
     generatedPwd: ref("")
 }
 const modalRef = ref("dialog1")
-const isLoading = ref(true)
+const isLoading = ref(false)
 const formSubmit = async () => {
     isLoading.value = true
     if (modalRef.value) modalRef.value.showModal()

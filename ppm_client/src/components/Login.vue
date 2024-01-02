@@ -52,8 +52,7 @@ const formSubmit = async () => {
                 <div class="max-w-md card-body">
                     <h1 class="mb-5 text-5xl font-bold">Login</h1>
                     <!-- <p class="mb-5"></p> -->
-                    <form ref="formRef"
-                    @submit.prevent="formSubmit()">
+                    <form @submit.prevent="formSubmit()">
 
                         <div class="form-control">
                             <label class="label">

@@ -15,29 +15,33 @@ The extension provided will automatically guess the site's name for you everytim
 
 ### Core functionality
 ![1](public/core.png)
-> In case you are not satisfied with a minimal extension and want a full-fledged password manager that remembers your generation history as well, you can use the **Blazor Webassembly** client. You would need to register yourself and for every password that you create, the backend api would store the website's url/title in the database. It would be provided to you at login so you can view your websites and regenerate the password.
+> In case you are not satisfied with a minimal extension and want a full-fledged password manager that remembers your generation history as well, you can use the **Vuejs** client. You would need to register yourself and for every password that you create, the backend api would store the website's url/title in the database. It would be provided to you at login so you can view your websites and regenerate the password.
 ### User authentication
 ![2](public/authentication.png)
-### Blazor client
+### VueJS client
 ![3](public/auth_user.png)
 ***
 ## Screenshots
+### Client
+![Alt text](public/main_client.png)
+![Alt text](public/main_client_gen.png)
 ### Extension
 <!-- ![Alt text](public/image1_ext.png) -->
 ![Alt text](public/main_ext.png)
 ![Alt text](public/main_gen.png)
-<!-- ### Blazor client -->
+<!-- ### Vuejs client -->
 ## Technologies used
 - C#, .NET
 - Minimal API
 - SQLite DB
 - Entity Framework Core
 - Javascript
-- Blazor
+- Vuejs
+- TailwindCSS
 - .NET Identity Framework
 - K6 (For load testing)
 ***
-## API Endpoints
+<!-- ## API Endpoints
 ### Generate new password (No-auth)
 - Endpoint: ``
 - Method: **POST**
@@ -45,4 +49,4 @@ The extension provided will automatically guess the site's name for you everytim
 - Example request:
 ```bash
 curl -X POST https://
-```
+``` -->

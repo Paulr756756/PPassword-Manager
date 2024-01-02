@@ -39,3 +39,17 @@ export const getSavedSitesFromApi = async () => {
     if (!response.ok) throw new Error(`HTTP ERROR! Status ${response.status}`)
     return response.json()
 }
+
+export const deleteSavedSiteFromApi = async (body) => {
+    const response = await fetch(`${cts.baseUrl}${cts.deleteSite}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(body)
+    })
+
+    if (!response.ok) throw new Error(`HTTP ERROR! Status ${response.status}`)
+    return response.json()
+}
