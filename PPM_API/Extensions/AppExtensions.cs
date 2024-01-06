@@ -17,8 +17,9 @@ public static class DependencyExtensions
     /// <param name="builder">The web application builder</param>
     public static void RegisterDependencies(WebApplicationBuilder builder)
     {
-        var services = builder.Services;
-        var configuration = builder.Configuration;
+        IServiceCollection? services = builder.Services;
+        ConfigurationManager? configuration = builder.Configuration;
+        string? dbConnString = configuration.GetConnectionString("Azure_SQL_CONNECTIONSTRING");
         
         services.AddCors(co => 
         {
@@ -27,15 +28,14 @@ public static class DependencyExtensions
                      .WithMethods("POST", "GET", "PUT", "DELETE")
                      .AllowAnyHeader()
                      .AllowCredentials();
-                 
-                /* TODO(Doesn't work. Figure out why??)
-                pb.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();*/
             });
                 
         });
 
-        services.AddDbContext<AppDbContext>(x =>
-            x.UseSqlite("DataSource=app.db"));
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseSqlServer(dbConnString);
+        });
         services.AddIdentityCore<User>()
             .AddEntityFrameworkStores<AppDbContext>()
             .AddApiEndpoints();

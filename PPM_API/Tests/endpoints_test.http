@@ -1,0 +1,81 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@baseurl=https://ppmapi20240106013303.azurewebsites.net/
+@accessToken=CfDJ8CFyEDhAAhtHiKe7STwPib4guz6y87X0R1FyNHpI0-vWQgd-T9bMiZjzivvU0LlXVG1sHsBDQrazwnPCg2oAd4F22SSmWoMmRZ0r7UWM9dTa_sxrzArgVhCkHwx0Zpl3NsnA9NtIeWAa6w-3ewn6_8pSuP6nWZzv9jJQ0aajEAYKxjiRVyOCT7M565O4SxME2wb0sXKGqc5RBtgxDtxJXJhAIOGSs7uLuWaHf9Iz9xgWHB1UxMGaIck-BcbWo742cg7Ln6ZgGkvTJgG-F35yTDFhPSaKr1qwCWh3k9_C37WDXKrrU9pQI45GTYGRQyhVoPjOlJ0IfaKqUbJf5Pry8Q6TxqPLQgBRRGkpqZ-gF0nhBACqvR2emb-caIkYRskCpNkqAbWUBUntgj2-3be0UU_NxhTDYUjXrKHAhi3BBxcqnD09iRGwEI68ktMzTO7OgNTsLuxKBiS62g7w7pB0RPHHORAA33Bi8MrbIVdppQkBUDDLJHh30la1WKzZFBgaQdVEAldKb321wLgHj_silO-XndTIaYPfjJCnZ8JDtoPr7inMvyCotIYFvKpatOWzbNb9Z9LJVoNikJ_zpxR10vzuYO-IgQb7VOs1bd5HdEENkWvu4QRbZstcMf0aesB4K8ypXArF2isp8t9ljj2pNRdgPlHC0rIpqcEpB8hO3mj6omAEWTh2LcD8KFDP9u0nYg
+@refreshToken=CfDJ8CFyEDhAAhtHiKe7STwPib4tUrXHtJ_1wvFzCXEmYe3pdSW1-21HnnbhN3PsbOJ-2L9r1ir7BXBv7kIrPjvjgrTiGPw_vSQesUdNx_n5LlIOU1XYvACu72ffv79B1LBtpwsJJXTdg3rUVldgbNRZrAe55AQ2AyPRQsHoouxrocAse8e3B1tJ76PU4ZQo_pO5SkxnpU9jJ-xP5XexFN4YrPDpuzLiQBdSO-PqlZjvcIKCMsEqsOuAMRM-eG_s--ojYlsZfz0-WJC0DS521BCIO-uNlFO72fhRSG5YY1TwdQpueC2iU9bHzS4q8Fq_zXHPLZB7wrXyZ6xAP-gVgkxMSxRxK8eUFC8MK5VmLKjDxkXFQRcPW_n6Y3XW1Urhm2ZYgalJljJ1tH74sLHXzM1WCPpc5gWsxcZ6LP_XPqm7GcswGjn83HXwqQPG7wy6f_52g620w4I_VC9w79ycJA4B2-ALBsOR5LXuo_Tsgdmrz-iQbHnw8WIQpYgNf9WzWYFd0-F5YVz7pW91rTUdOsmcRd88pfcRa9hSl_S3pS7cI9utbCYeE8qhaOBKMvi1PRyYMy6nurIAoM8LfVGWQbkHVOs700PO5K7PG4-Qo0PBnen3YrwVPoh2C-BAflMsw9_xQY5bjOu7UUaBNVZRdGGDROG_tG6CV4sCUYBJ9FalMBPuFRHgFdEUCNtzJ3KD80wa6w
+
+POST {{baseurl}}gen-pwd
+Content-Type: application/json
+
+{
+  "title": "example_title",
+  "masterKey": "example_key"
+}
+
+###
+
+POST {{baseurl}}register
+Content-Type: application/json
+
+{
+  "username": "testname",
+  "email": "test@testmail.com",
+  "password": "Test@123"
+}
+
+###
+
+POST {{baseurl}}login
+Content-Type: application/json
+
+{
+  "email": "test@testmail.com",
+  "password": "Test@123"
+}
+
+###
+
+POST {{baseurl}}auth/gen-pwd
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "title": "title"
+}
+
+###
+
+GET {{baseurl}}manage/info
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET {{baseurl}}saved-sites
+Authorization: Bearer {{accessToken}}
+
+
+###
+
+POST {{baseurl}}refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+###
+
+DELETE {{baseurl}}auth/delete-site
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "title": "Google"
+}
+
+###
+
+DELETE {{baseurl}}auth/clear-sites
+Authorization: Bearer {{accessToken}}
+
+###
+
