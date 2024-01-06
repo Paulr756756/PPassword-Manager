@@ -1,4 +1,4 @@
-<img src="public/icon_main.png"/>
+<img src="public/icon_128.png"/>
 
 # PPassword-Manager
 ***
