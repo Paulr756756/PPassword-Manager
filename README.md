@@ -39,6 +39,8 @@ The extension provided will automatically guess the site's name for you everytim
 
 ![Alt text](public/main_client.png)
 ![Alt text](public/main_client_gen.png)
+![Alt text](public/main_client_login.png)
+![Alt text](public/main_client_auth.png_)
 
 ### Extension
 

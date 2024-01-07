@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import { auth_getPasswordFromAPI } from '../apiCalls';
+import DeleteButton from './DeleteButton.vue';
+
+const emit = defineEmits(['deleted'])
 
 const props = defineProps({
     title: String,
@@ -61,6 +64,7 @@ const copyPassword = async () => {
                         </div>
                     </div>
                 </dialog>
+                <DeleteButton @deleted="emit('deleted')"/>
             </div>
         </div>
     </div>
