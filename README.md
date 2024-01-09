@@ -1,7 +1,6 @@
 <img src="public/icon_128.png"/>
 
 # PPassword-Manager
-***
 
 **Site link** : https://zealous-rock-06524e50f.4.azurestaticapps.net/
 
@@ -14,7 +13,6 @@ The extension provided will automatically guess the site's name for you everytim
 
 ## Architecture
 
-***
 <details>
   <summary>📣 Note!!</summary>
   <p>This is not the final release and will be updated in the future.</p>
@@ -33,7 +31,7 @@ The extension provided will automatically guess the site's name for you everytim
 
 ![3](public/auth_user.png)
 
-***
+
 
 ## Screenshots
 <!-- 
@@ -63,7 +61,6 @@ The extension provided will automatically guess the site's name for you everytim
 - .NET Identity Framework
 - [K6](https://k6.io/) for load testing
 
-***
 
 ## [API Endpoints]
 
