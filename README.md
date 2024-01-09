@@ -3,6 +3,8 @@
 # PPassword-Manager
 ***
 
+**Site link** : https://zealous-rock-06524e50f.4.azurestaticapps.net/
+
 PPassword manager is a new solution designed to change the way you think about your passwords. Using Ppassword manager, you can generate much more secure passwords for all your websites using a single master key. And the cool thing is that you do not have to worry about your password being stolen or hacked, since they are not stored at all.
 
 ## How does it work
@@ -34,13 +36,13 @@ The extension provided will automatically guess the site's name for you everytim
 ***
 
 ## Screenshots
-
+<!-- 
 ### Client
 
 ![Alt text](public/main_client.png)
 ![Alt text](public/main_client_gen.png)
 ![Alt text](public/main_client_login.png)
-![Alt text](public/main_client_auth.png_)
+![Alt text](public/main_client_auth.png_) -->
 
 ### Extension
 
