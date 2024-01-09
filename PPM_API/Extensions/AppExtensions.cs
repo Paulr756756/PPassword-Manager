@@ -24,7 +24,8 @@ public static class DependencyExtensions
         services.AddCors(co => 
         {
             co.AddPolicy("myPolicy", pb => {
-                 pb.WithOrigins(configuration["AllowedOrigins"]!)
+                 pb.WithOrigins("http://localhost:5173", "https://zealous-rock-06524e50f.4.azurestaticapps.net")
+                    /*.WithOrigins(configuration["AllowedOrigins"]!)*/
                      .WithMethods("POST", "GET", "PUT", "DELETE")
                      .AllowAnyHeader()
                      .AllowCredentials();

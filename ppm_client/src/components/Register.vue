@@ -13,7 +13,7 @@ const model = {
     password: "",
 }
 
-const confirmPassword = ""
+const confirmPassword = ref("")
 
 const isLoading = ref(false)
 const formRef = ref("form1")
@@ -21,7 +21,7 @@ const modalRef = ref("dialog2")
 const status = ref("Not Registered")
 
 const validateInputs = () => {
-    if (model.password != confirmPassword) {
+    if (model.password != confirmPassword.value) {
         //TODO(Do something else)
         throw new Error('Passwords do not match!')
     }
