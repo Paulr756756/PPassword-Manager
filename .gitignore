@@ -68,3 +68,6 @@ Desktop.ini
 
 # Node modules
 /ppm_client/node_modules/
+
+#build
+/ppm_client/dist/
